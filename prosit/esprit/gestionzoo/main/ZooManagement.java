@@ -1,3 +1,8 @@
+package prosit.esprit.gestionzoo.main;
+
+import prosit.esprit.gestionzoo.entities.Animal;
+import prosit.esprit.gestionzoo.entities.Zoo;
+
 import java.util.Scanner;
 
 public class ZooManagement {
@@ -9,17 +14,14 @@ public class ZooManagement {
         int nbrCages;
 
         do {
-
             System.out.print("Enter the zoo name: ");
             zooName = scanner.nextLine();
             if (zooName.trim().isEmpty()) {
                 System.out.println("Error: zoo name cannot be empty.");
             }
-
         } while (zooName.trim().isEmpty());
 
         do {
-
             System.out.print("Enter the number of cages: ");
             while (!scanner.hasNextInt()) {
                 System.out.println("Error: please enter a number.");
@@ -48,10 +50,10 @@ public class ZooManagement {
 
         Animal lion = new Animal();
 
-        lion.family = "Felidae";
-        lion.name = "Lion";
-        lion.age = 5;
-        lion.ismammal = true;
+        lion.setFamily("Felidae");
+        lion.setName("Lion");
+        lion.setAge(5);
+        lion.setMammal(true);
 
         Animal elephant = new Animal(
                 "Elephantidae",
@@ -60,7 +62,6 @@ public class ZooManagement {
                 true
         );
 
-
         Animal tiger = new Animal(
                 "Felidae",
                 "Tiger",
@@ -68,14 +69,12 @@ public class ZooManagement {
                 true
         );
 
-
         Animal crocodile = new Animal(
                 "Crocodylidae",
                 "Crocodile",
                 7,
                 false
         );
-
 
         Animal giraffe = new Animal(
                 "Giraffidae",
@@ -197,7 +196,7 @@ public class ZooManagement {
                 myzoo2
         );
 
-        System.out.println("Zoo with more animals: " + biggerZoo.name);
+        System.out.println("Zoo with more animals: " + biggerZoo.getName());
 
         System.out.println("Number of animals: " + biggerZoo.numberOfAnimals());
 
